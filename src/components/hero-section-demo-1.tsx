@@ -35,8 +35,8 @@ export default function HeroSectionOne() {
           transition={{ duration: 0.3, delay: 0.8 }}
           className="relative z-10 mx-auto max-w-xl py-4 text-center text-lg font-normal text-muted-foreground"
         >
-          Gabung dengan komunitas bisnis privat berbayar dan akses puluhan kelas 
-          dari para pebisnis berpengalaman. Belajar, networking, dan tumbuh bersama.
+          Gabung dengan komunitas bisnis privat berbayar dan akses kelas 100% 
+          dari pebisnis . Belajar, networking, dan tumbuh bersama.
         </motion.p>
 
         {/* CTA Button */}
