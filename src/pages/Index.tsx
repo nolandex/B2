@@ -16,7 +16,7 @@ const Index = () => {
       </section>
 
       {/* Divider */}
-      <div className='mx-auto mb-8 h-[1px] w-full max-w-2xl bg-gradient-to-l from-primary/100 to-transparent'></div>
+      <div className='mx-auto mb-8 h-[1px] w-full max-w-2xl bg-gradient-to-r from-transparent via-primary to-transparent'></div>
 
       {/* Features Section */}
       <section className="mb-20">
@@ -25,7 +25,7 @@ const Index = () => {
 
       {/* Features Section with Glowing Effects */}
       <section className="mb-20">
-        <div className="h-[1px] w-full bg-gradient-to-l from-primary/100 to-transparent"></div>
+        <div className="h-[1px] w-full bg-gradient-to-r from-primary to-transparent"></div>
         
         <div className="p-6 text-center">
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold !leading-snug">Amazing Features</h2>
@@ -36,7 +36,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Divider before Timeline */}
+      {/* Divider before Timeline (revisi) */}
       <div className="h-[1px] w-full bg-gradient-to-l from-primary/100 to-transparent mb-4"></div>
 
       {/* Timeline Section */}
