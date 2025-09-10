@@ -20,14 +20,15 @@ export const AnimatedTooltip = ({
   }[];
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [tooltipAlign, setTooltipAlign] = useState<"left" | "center" | "right">(
+    "center",
+  );
+
   const springConfig = { stiffness: 100, damping: 15 };
   const x = useMotionValue(0);
   const animationFrameRef = useRef<number | null>(null);
 
-  const rotate = useSpring(
-    useTransform(x, [-100, 100], [-45, 45]),
-    springConfig,
-  );
+  const rotate = useSpring(useTransform(x, [-100, 100], [-45, 45]), springConfig);
   const translateX = useSpring(
     useTransform(x, [-100, 100], [-50, 50]),
     springConfig,
@@ -44,13 +45,29 @@ export const AnimatedTooltip = ({
     });
   };
 
+  // ✅ tentukan posisi tooltip sesuai lokasi avatar di layar
+  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>, id: number) => {
+    setHoveredIndex(id);
+
+    const rect = e.currentTarget.getBoundingClientRect();
+    const vw = window.innerWidth;
+
+    if (rect.left < 100) {
+      setTooltipAlign("left");
+    } else if (vw - rect.right < 100) {
+      setTooltipAlign("right");
+    } else {
+      setTooltipAlign("center");
+    }
+  };
+
   return (
     <>
-      {items.map((item, idx) => (
+      {items.map((item) => (
         <div
+          key={item.id}
           className="group relative -mr-4"
-          key={item.name}
-          onMouseEnter={() => setHoveredIndex(item.id)}
+          onMouseEnter={(e) => handleMouseEnter(e, item.id)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
           <AnimatePresence>
@@ -73,7 +90,10 @@ export const AnimatedTooltip = ({
                   rotate: rotate,
                   whiteSpace: "nowrap",
                 }}
-                className="absolute -top-16 left-1/2 z-50 flex -translate-x-1/2 flex-col items-center justify-center rounded-md bg-card px-4 py-2 text-xs shadow-xl border border-border"
+                className={`absolute -top-16 z-50 flex flex-col items-center justify-center rounded-md bg-card px-4 py-2 text-xs shadow-xl border border-border
+                  ${tooltipAlign === "center" ? "left-1/2 -translate-x-1/2" : ""}
+                  ${tooltipAlign === "left" ? "left-0 -translate-x-0" : ""}
+                  ${tooltipAlign === "right" ? "right-0 translate-x-0" : ""}`}
               >
                 <div className="absolute inset-x-10 -bottom-px z-30 h-px w-[20%] bg-gradient-to-r from-transparent via-emerald-500 to-transparent" />
                 <div className="absolute -bottom-px left-10 z-30 h-px w-[40%] bg-gradient-to-r from-transparent via-sky-500 to-transparent" />
@@ -84,6 +104,8 @@ export const AnimatedTooltip = ({
               </motion.div>
             )}
           </AnimatePresence>
+
+          {/* Avatar */}
           <img
             onMouseMove={handleMouseMove}
             height={100}
