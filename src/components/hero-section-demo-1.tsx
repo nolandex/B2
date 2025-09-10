@@ -30,16 +30,9 @@ export default function HeroSectionOne() {
 
         {/* Subtext */}
         <motion.p
-          initial={{
-            opacity: 0,
-          }}
-          animate={{
-            opacity: 1,
-          }}
-          transition={{
-            duration: 0.3,
-            delay: 0.8,
-          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3, delay: 0.8 }}
           className="relative z-10 mx-auto max-w-xl py-4 text-center text-lg font-normal text-muted-foreground"
         >
           With AI, you can launch your website in hours, not days. Try our best
@@ -49,18 +42,9 @@ export default function HeroSectionOne() {
 
         {/* CTA Button */}
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 0.3,
-            delay: 1.0,
-          }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 1.0 }}
           className="relative z-10 flex justify-center mb-8"
         >
           <button
@@ -77,18 +61,9 @@ export default function HeroSectionOne() {
 
         {/* Team Section */}
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 30,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 0.5,
-            delay: 1.2,
-          }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 1.2 }}
           className="relative z-10"
         >
           <div className="text-center mb-10">
@@ -96,7 +71,11 @@ export default function HeroSectionOne() {
               Meet Our Team
             </h2>
           </div>
-          <AnimatedTooltipPreview />
+
+          {/* Responsive wrapper fix */}
+          <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto px-4">
+            <AnimatedTooltipPreview />
+          </div>
         </motion.div>
       </div>
     </div>
