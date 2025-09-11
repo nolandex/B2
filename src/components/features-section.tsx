@@ -1,11 +1,38 @@
 "use client";
 
 import { motion } from "motion/react";
-import { FEATURES } from "@/constants/features";
+import { Zap, Target, BarChart3 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { MagicCard } from "@/components/ui/magic-card";
 
 export default function FeaturesSection() {
+  const FEATURES = [
+    {
+      title: "Bingung Mulai Bisnis?",
+      description:
+        "Dapatkan panduan praktis dari pebisnis berpengalaman agar langkah pertamamu lebih terarah.",
+      icon: Zap,
+      image:
+        "https://ik.imagekit.io/nf7nyedso/0602016e-78bd-46be-8fcc-422d31b4d9c5_20250911_182228_0000.png?updatedAt=1757590667229",
+    },
+    {
+      title: "Networking Sulit?",
+      description:
+        "Susah cari teman bisnis serius? Komunitas ini mempertemukan kamu dengan yang mau berkembang.",
+      icon: Target,
+      image:
+        "https://ik.imagekit.io/nf7nyedso/0602016e-78bd-46be-8fcc-422d31b4d9c5_20250911_182228_0000.png?updatedAt=1757590667229",
+    },
+    {
+      title: "Investasi Leher ke Atas",
+      description:
+        "Ilmu adalah aset paling berharga. Upgrade skill dan wawasan bisnis untuk hasil jangka panjang.",
+      icon: BarChart3,
+      image:
+        "https://ik.imagekit.io/nf7nyedso/e24b91bf-c966-4332-b404-4ef5807e1529_20250911_182024_0000-min.png?updatedAt=1757590665249",
+    },
+  ];
+
   return (
     <section className="relative flex flex-col items-center justify-center w-full pt-6 pb-0">
       <div className="max-w-7xl mx-auto px-4">
@@ -54,7 +81,7 @@ export default function FeaturesSection() {
 
               <div className="mt-3 w-full bg-card/50 overflow-hidden rounded-lg">
                 <img
-                  src="https://ik.imagekit.io/nf7nyedso/Image_fx%20(72).jpg?updatedAt=1757414719705"
+                  src={feature.image}
                   alt={feature.title}
                   className="w-full h-full object-cover"
                 />
