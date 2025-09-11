@@ -21,7 +21,7 @@ export default function FeaturesSection() {
         "Susah cari teman bisnis serius? Komunitas ini mempertemukan kamu dengan yang mau berkembang.",
       icon: Target,
       image:
-        "https://ik.imagekit.io/nf7nyedso/0602016e-78bd-46be-8fcc-422d31b4d9c5_20250911_182228_0000.png?updatedAt=1757590667229",
+        "https://ik.imagekit.io/nf7nyedso/095e1a53-87f2-4c34-9869-4ac69a000ca9_20250911_182357_0000-min.png?updatedAt=1757590665391",
     },
     {
       title: "Investasi Leher ke Atas",
