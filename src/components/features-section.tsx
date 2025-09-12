@@ -34,14 +34,14 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <section className="relative flex flex-col items-center justify-center w-full pt-6 pb-0">
+    <section className="relative flex flex-col items-center justify-center w-full pt-2 pb-0">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-2xl md:text-4xl lg:text-5xl font-bold !leading-snug mt-8"
+            className="text-2xl md:text-4xl lg:text-5xl font-bold !leading-snug !mt-12"
           >
             Bangun Bisnis Lebih Mudah
           </motion.h2>
