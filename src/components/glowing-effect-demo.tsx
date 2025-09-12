@@ -5,39 +5,39 @@ export default function GlowingEffectDemo() {
   return (
     <section className="w-full pt-2 pb-8">
       <div className="flex flex-col items-center">
-        {/* Judul Section tetap "Amazing Features" */}
+        {/* Judul section tetap "Amazing Features" */}
         <h2 className="mb-6 text-center text-3xl font-bold text-foreground md:text-4xl">
-          Amazing Features
+          Apa Yang Kamu Dapat
         </h2>
 
         <ul className="grid grid-cols-1 gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-6 xl:max-h-[34rem] xl:grid-rows-2">
           <GridItem
             area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
-            icon={<Box className="h-5 w-5 text-foreground" />}
+            icon={<Box className="h-4 w-4 text-foreground" />}
             title="Akses Materi Eksklusif"
             description="Dapatkan materi bisnis yang tidak dibagikan ke publik."
           />
           <GridItem
             area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
-            icon={<Sparkles className="h-5 w-5 text-foreground" />}
+            icon={<Sparkles className="h-4 w-4 text-foreground" />}
             title="Berbagi Pengetahuan"
             description="Anggota bertukar informasi strategi bisnis, tren pasar, atau teknologi terbaru."
           />
           <GridItem
             area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]"
-            icon={<Lock className="h-5 w-5 text-foreground" />}
+            icon={<Lock className="h-4 w-4 text-foreground" />}
             title="Kolaborasi Bisnis"
             description="Peluang bekerja sama dengan anggota lain dalam proyek atau kemitraan."
           />
           <GridItem
             area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
-            icon={<Settings className="h-5 w-5 text-foreground" />}
+            icon={<Settings className="h-4 w-4 text-foreground" />}
             title="Jaringan Bisnis yang Luas"
             description="Terhubung dengan pengusaha lain dari berbagai industri, memperluas koneksi profesional."
           />
           <GridItem
             area="md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]"
-            icon={<Search className="h-5 w-5 text-foreground" />}
+            icon={<Search className="h-4 w-4 text-foreground" />}
             title="Template & Tools Siap Pakai"
             description="Contoh: pitch deck, business plan, SOP, dan berbagai tools praktis lainnya."
           />
