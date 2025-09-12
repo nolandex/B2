@@ -3,11 +3,11 @@ import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 export default function GlowingEffectDemo() {
   return (
-    <section className="w-full pt-8 pb-8"> {/* 🔹 Section lebih proporsional */}
+    <section className="w-full pt-2 pb-8">
       <div className="flex flex-col items-center">
-        {/* Judul Section */}
+        {/* Judul Section tetap "Amazing Features" */}
         <h2 className="mb-6 text-center text-3xl font-bold text-foreground md:text-4xl">
-          Manfaat Bergabung dengan Komunitas Bisnis
+          Amazing Features
         </h2>
 
         <ul className="grid grid-cols-1 gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-6 xl:max-h-[34rem] xl:grid-rows-2">
