@@ -14,7 +14,7 @@ const GallerySection = () => {
       href: "https://ibb.co/C3xy9W4b",
       src: "https://i.ibb.co/cSz98xR6/download-43.png",
       alt: "download-43",
-      caption: "Bisnis tanpa arah",
+      caption: "Bisnis dengan kebingungan",
     },
   ];
 
@@ -38,18 +38,20 @@ const GallerySection = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="relative aspect-square rounded-xl overflow-hidden bg-card border border-border/50 hover:border-border/100 transition-colors"
+              className="relative aspect-square rounded-xl bg-gradient-to-r from-[#2563EB] via-[#2563EB]/70 to-[#2563EB]/40 p-[2px] shadow-lg"
             >
-              <a href={item.href} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  className="w-full h-full object-cover"
-                />
-              </a>
-              {/* Caption */}
-              <div className="absolute -bottom-6 left-2 bg-black/70 text-white text-sm md:text-base px-3 py-1 rounded-lg shadow-md">
-                {item.caption}
+              <div className="w-full h-full rounded-xl overflow-hidden bg-card">
+                <a href={item.href} target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className="w-full h-full object-cover"
+                  />
+                </a>
+                {/* Caption */}
+                <div className="absolute -bottom-6 left-2 bg-black/70 text-white text-sm md:text-base px-3 py-1 rounded-lg shadow-md">
+                  {item.caption}
+                </div>
               </div>
             </motion.div>
           ))}
