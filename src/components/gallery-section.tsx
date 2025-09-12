@@ -5,9 +5,9 @@ import { motion } from "motion/react";
 const GallerySection = () => {
   const images = [
     {
-      href: "https://ibb.co/rKrNQqDS",
-      src: "https://i.ibb.co/Q7wtJhyR/download-42.png",
-      alt: "download-42",
+      href: "https://ibb.co.com/3Y5thZdv",
+      src: "https://i.ibb.co.com/jZ974Xfz/download-40.png",
+      alt: "download-40",
       caption: "Orang Yang Mau Melompat Untuk Merubah Hidupnya",
     },
     {
@@ -38,19 +38,24 @@ const GallerySection = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="relative aspect-[4/5] rounded-xl bg-gradient-to-r from-[#2563EB] via-[#2563EB]/70 to-[#2563EB]/40 p-[2px] shadow-lg overflow-hidden"
+              className="relative aspect-square rounded-xl bg-gradient-to-r from-[#2563EB] via-[#2563EB]/70 to-[#2563EB]/40 p-[2px] shadow-lg overflow-hidden"
             >
               <a href={item.href} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  className="w-full h-full object-cover rounded-xl"
-                />
-                {/* Overlay Text */}
-                <div className="absolute bottom-6 left-0 right-0 px-4 md:px-6">
-                  <p className="text-white font-bold text-lg md:text-2xl lg:text-3xl leading-snug drop-shadow-lg">
-                    {item.caption}
-                  </p>
+                <div className="relative w-full h-full rounded-xl overflow-hidden">
+                  {/* Image with dim overlay */}
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className="w-full h-full object-cover rounded-xl"
+                  />
+                  <div className="absolute inset-0 bg-black/40"></div>
+
+                  {/* Overlay Text */}
+                  <div className="absolute bottom-6 left-0 right-0 px-4 md:px-6">
+                    <p className="text-white font-extrabold text-xl md:text-3xl lg:text-4xl leading-snug drop-shadow-2xl">
+                      {item.caption}
+                    </p>
+                  </div>
                 </div>
               </a>
             </motion.div>
