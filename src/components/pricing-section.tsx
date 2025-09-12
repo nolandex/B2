@@ -5,15 +5,15 @@ import { CheckIcon } from "lucide-react";
 
 const Pricing = () => {
   const plan = {
-    title: "Mastermind",
+    title: "Akses Selamanya",
     price: "Rp300.000",
-    desc: "Perfect for growing businesses looking to scale with ease.",
-    buttonText: "Get Started",
+    desc: "Bonus Website Landing Page / Company Profile Dengan Domain & Hosting",
+    buttonText: "Daftar Sekarang",
     features: [
-      "AI-powered automation",
-      "Unlimited campaigns",
-      "Priority support",
-      "Advanced analytics",
+      "WEB-APP",
+      "Grup Eksklusif ",
+      "Support Selamanya",
+      "-",
     ],
   };
 
