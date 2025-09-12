@@ -11,60 +11,42 @@ interface TimelineEntry {
 export default function TimelineDemo() {
   const data: TimelineEntry[] = [
     {
-      title: "2024",
+      title: "Klik ‘Daftar Sekarang’ dan Selesaikan Pembayaran",
       content: (
         <div className="mt-0 mb-2">
           <p className="text-xs font-normal text-foreground md:text-sm">
-            Built and launched Aceternity UI and Aceternity UI Pro from scratch
+            Setelah melakukan pembayaran, Anda akan diarahkan ke Whatsapp atau Email Admin untuk mendapatkan akses ke Grup Privat Web App Kelas Bisnis.
           </p>
-          <img
-            src="https://assets.aceternity.com/templates/startup-1.webp"
-            alt="startup template"
-            width={800}
-            height={400}
-            className="w-full rounded-lg object-cover md:h-64 lg:h-80 mt-2"
-          />
         </div>
       ),
     },
     {
-      title: "Early 2023",
+      title: "Modul Inti Web App Kelas Bisnis",
       content: (
         <div className="mt-0 mb-2">
-          <p className="text-xs font-normal text-foreground md:text-sm mb-1">
-            I usually run out of copy, but when I see content this big, I try to integrate lorem ipsum.
-          </p>
-          <p className="text-xs font-normal text-foreground md:text-sm mb-1">
-            Lorem ipsum is for people who are too lazy to write copy. But we are not. Here are some more example of beautiful designs I built.
-          </p>
-          <img
-            src="https://assets.aceternity.com/pro/hero-sections.png"
-            alt="hero template"
-            width={800}
-            height={400}
-            className="w-full rounded-lg object-cover md:h-64 lg:h-80 mt-1"
-          />
+          <ul className="list-disc pl-4 text-xs md:text-sm text-foreground">
+            <li>Dasar-dasar bisnis & mindset pengusaha</li>
+            <li>Riset pasar & strategi</li>
+            <li>Perencanaan bisnis & keuangan</li>
+            <li>Marketing & branding</li>
+            <li>Operasional & manajemen</li>
+            <li>Growth & scaling up</li>
+          </ul>
         </div>
       ),
     },
     {
-      title: "Changelog",
+      title: "Course Niche Bisnis",
       content: (
         <div className="mt-0 mb-2">
-          <div className="mb-2">
-            <div className="flex items-center gap-2 text-xs text-muted-foreground md:text-sm">✅ Card grid component</div>
-            <div className="flex items-center gap-2 text-xs text-muted-foreground md:text-sm">✅ Startup template Aceternity</div>
-            <div className="flex items-center gap-2 text-xs text-muted-foreground md:text-sm">✅ Random file upload lol</div>
-            <div className="flex items-center gap-2 text-xs text-muted-foreground md:text-sm">✅ Himesh Reshammiya Music CD</div>
-            <div className="flex items-center gap-2 text-xs text-muted-foreground md:text-sm">✅ Salman Bhai Fan Club registrations open</div>
-          </div>
-          <img
-            src="https://assets.aceternity.com/pro/bento-grids.png"
-            alt="bento template"
-            width={800}
-            height={400}
-            className="w-full rounded-lg object-cover md:h-64 lg:h-80 mt-1"
-          />
+          <p className="text-xs md:text-sm text-foreground mb-2">
+            Berbagai kategori course bisnis niche yang dapat difilter sesuai kebutuhan:
+          </p>
+          <ul className="list-disc pl-4 text-xs md:text-sm text-foreground mb-2">
+            <li>Tidak memerlukan expert untuk menjalankan (online course terbatas)</li>
+            <li>Bukan produk/jasa komoditas</li>
+            <li>Semua berasal dari pebisnis nyata</li>
+          </ul>
         </div>
       ),
     },
