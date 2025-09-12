@@ -34,64 +34,75 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <section className="relative flex flex-col items-center justify-center w-full py-12 px-4 bg-background">
-      {/* Judul Section */}
-      <motion.div
-        className="flex flex-col items-center justify-center text-center max-w-2xl mx-auto mb-12"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-snug text-foreground mb-4">
-          Bangun Bisnis Lebih Mudah
-        </h2>
-        <p className="text-sm md:text-base text-muted-foreground">
-          Temukan fitur-fitur yang membantumu memulai dan mengembangkan bisnis dengan lebih efektif.
-        </p>
-      </motion.div>
-
-      {/* Grid Fitur */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl w-full mx-auto">
-        {FEATURES.map((feature, index) => (
-          <motion.div
-            key={feature.title}
-            initial={{ opacity: 0, y: 30 }}
+    <section className="relative flex flex-col items-center justify-center w-full pt-6 pb-0">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
-            className="relative flex flex-col rounded-2xl bg-card border border-border/50 hover:border-border/100 transition-colors"
+            transition={{ duration: 0.6 }}
+            className="text-2xl md:text-4xl lg:text-5xl font-bold !leading-snug mt-8"
           >
-            <MagicCard
-              gradientFrom="#3b82f6"
-              gradientTo="#1d4ed8"
-              className="p-4 lg:p-6 lg:rounded-3xl"
-              gradientColor="rgba(59,130,246,0.2)"
-            >
-              <div className="flex items-center space-x-3 mb-3">
-                <feature.icon className="w-6 h-6 text-primary" />
-                <h3 className="text-xl font-semibold text-foreground">{feature.title}</h3>
-              </div>
-              <p className="text-sm text-muted-foreground">{feature.description}</p>
-
-              <div className="mt-4 w-full overflow-hidden rounded-lg">
-                <img
-                  src={feature.image}
-                  alt={feature.title}
-                  className="w-full h-48 object-cover rounded-lg"
-                />
-              </div>
-            </MagicCard>
-          </motion.div>
-        ))}
+            Bangun Bisnis Lebih Mudah
+          </motion.h2>
+        </div>
       </div>
 
-      {/* CTA Button */}
-      <div className="mt-12">
-        <button
-          className="bg-[#0070f3] text-white font-medium text-base px-12 py-3 rounded-md shadow-lg hover:shadow-xl transition duration-200"
-        >
-          Daftar Sekarang
-        </button>
-      </div>
+      {/* Grid fitur */}  
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 relative overflow-visible max-w-7xl mx-auto px-4">  
+        {FEATURES.map((feature, index) => (  
+          <motion.div  
+            key={feature.title}  
+            initial={{ opacity: 0, y: 30 }}  
+            whileInView={{ opacity: 1, y: 0 }}  
+            transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}  
+            className={cn(  
+              "relative flex flex-col rounded-2xl lg:rounded-3xl bg-card border border-border/50 hover:border-border/100 transition-colors",  
+              index === 3 && "lg:col-span-2",  
+              index === 2 && "md:col-span-2 lg:col-span-1"  
+            )}  
+          >  
+            <MagicCard  
+              gradientFrom="#3b82f6"  
+              gradientTo="#1d4ed8"  
+              className="p-4 lg:p-6 lg:rounded-3xl"  
+              gradientColor="rgba(59,130,246,0.2)"  
+            >  
+              <div className="flex items-center space-x-4 mb-3">  
+                <h3 className="text-xl font-semibold flex items-center gap-2">  
+                  <feature.icon className="size-5 text-primary" />  
+                  {feature.title}  
+                </h3>  
+              </div>  
+              <p className="text-sm text-muted-foreground">  
+                {feature.description}  
+              </p>  
+
+              <div className="mt-3 w-full bg-card/50 overflow-hidden rounded-lg">  
+                <img  
+                  src={feature.image}  
+                  alt={feature.title}  
+                  className="w-full h-full object-cover"  
+                />  
+              </div>  
+            </MagicCard>  
+          </motion.div>  
+        ))}  
+      </div>  
+
+      {/* 🔹 CTA Button */}  
+      <div className="mt-8 mb-0">  
+        <button  
+          className="shadow-[0_4px_14px_0_rgb(0,118,255,39%)]   
+            hover:shadow-[0_6px_20px_rgba(0,118,255,23%)]   
+            hover:bg-[rgba(0,118,255,0.9)]   
+            px-12 py-2 bg-[#0070f3]   
+            rounded-md text-white font-medium   
+            transition duration-200 ease-linear text-base"  
+        >  
+          Daftar Sekarang  
+        </button>  
+      </div>  
     </section>
   );
 }
