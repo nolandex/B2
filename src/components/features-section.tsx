@@ -1,4 +1,4 @@
-"use client";
+   "use client";
 
 import { motion } from "motion/react";
 import { Zap, Target, BarChart3 } from "lucide-react";
@@ -43,8 +43,7 @@ export default function FeaturesSection() {
             transition={{ duration: 0.6 }}
             className="text-2xl md:text-4xl lg:text-5xl font-bold !leading-snug mt-2"
           >
-            AI-Powered marketing <br /> made{" "}
-            <span className="italic">simple</span>
+            Bangun Bisnis Lebih <span className="italic">Mudah</span>
           </motion.h2>
         </div>
       </div>
@@ -106,4 +105,4 @@ export default function FeaturesSection() {
       </div>
     </section>
   );
-}
+}           
