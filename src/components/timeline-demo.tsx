@@ -11,16 +11,6 @@ interface TimelineEntry {
 export default function TimelineDemo() {
   const data: TimelineEntry[] = [
     {
-      title: "Klik ‘Daftar Sekarang’ dan Selesaikan Pembayaran",
-      content: (
-        <div className="mt-0 mb-2">
-          <p className="text-xs font-normal text-foreground md:text-sm">
-            Setelah melakukan pembayaran, Anda akan diarahkan ke Whatsapp atau Email Admin untuk mendapatkan akses ke Grup Privat Web App Kelas Bisnis.
-          </p>
-        </div>
-      ),
-    },
-    {
       title: "Modul Inti Web App Kelas Bisnis",
       content: (
         <div className="mt-0 mb-2">
@@ -47,6 +37,16 @@ export default function TimelineDemo() {
             <li>Bukan produk/jasa komoditas</li>
             <li>Semua berasal dari pebisnis nyata</li>
           </ul>
+        </div>
+      ),
+    },
+    {
+      title: "Klik ‘Daftar Sekarang’ dan Selesaikan Pembayaran",
+      content: (
+        <div className="mt-0 mb-2">
+          <p className="text-xs font-normal text-foreground md:text-sm">
+            Setelah melakukan pembayaran, Anda akan diarahkan ke Whatsapp atau Email Admin untuk mendapatkan akses ke Grup Privat Web App Kelas Bisnis.
+          </p>
         </div>
       ),
     },
