@@ -3,6 +3,11 @@
 import { motion } from "motion/react";
 
 const GallerySection = () => {
+  const images = [
+    "https://i.ibb.co.com/NgGjX7W5/download-35.png",
+    "https://i.ibb.co.com/fzbg0rsB/download-32.png",
+  ];
+
   return (
     <section className="mt-6 mb-10"> {/* jarak atas kecil */}
       <div className="flex items-center w-full gap-4 mb-6">
@@ -15,7 +20,7 @@ const GallerySection = () => {
       
       <div className="max-w-7xl mx-auto px-4 mt-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {[1, 2].map((index) => (
+          {images.map((src, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
@@ -24,8 +29,8 @@ const GallerySection = () => {
               className="aspect-square rounded-xl overflow-hidden bg-card border border-border/50 hover:border-border/100 transition-colors"
             >
               <img
-                src={`/placeholder.svg`}
-                alt={`Gallery Image ${index}`}
+                src={src}
+                alt={`Gallery Image ${index + 1}`}
                 className="w-full h-full object-cover"
               />
             </motion.div>
