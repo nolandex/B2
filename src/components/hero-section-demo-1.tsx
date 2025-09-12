@@ -36,7 +36,7 @@ export default function HeroSectionOne() {
           className="relative z-10 mx-auto max-w-xl py-4 text-center text-lg font-normal text-muted-foreground"
         >
           Gabung dengan komunitas bisnis privat berbayar dan akses kelas 100% 
-          dari pebisnis . Belajar, networking, dan tumbuh bersama.
+          dari pebisnis. Belajar, networking, dan tumbuh bersama.
         </motion.p>
 
         {/* CTA Button */}
@@ -65,13 +65,13 @@ export default function HeroSectionOne() {
           transition={{ duration: 0.5, delay: 1.2 }}
           className="relative z-10"
         >
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-foreground mb-4">
+          <div className="text-center mb-4">
+            <h2 className="text-3xl font-bold text-foreground mb-2">
               Tim Kami
             </h2>
           </div>
 
-          {/* Responsive wrapper fix */}
+          {/* Responsive wrapper */}
           <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto px-4">
             <AnimatedTooltipPreview />
           </div>
