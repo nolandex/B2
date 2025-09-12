@@ -42,7 +42,7 @@ const Index = () => {
       {/* Timeline Section */}
       <section className="mb-20">
         <div className="text-center mb-8 mt-6">
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold !leading-snug">Our Timeline</h2>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold !leading-snug">Bagaimana Cara Gabung</h2>
         </div>
         <TimelineDemo />
       </section>
