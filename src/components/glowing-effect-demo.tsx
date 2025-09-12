@@ -3,38 +3,43 @@ import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 export default function GlowingEffectDemo() {
   return (
-    <section className="w-full pt-2 pb-8"> {/* 🔹 Rapat ke atas */}
+    <section className="w-full pt-2 pb-8">
       <div className="flex flex-col items-center">
         <ul className="grid grid-cols-1 grid-rows-none gap-2 md:grid-cols-12 md:grid-rows-3 lg:gap-2 xl:max-h-[34rem] xl:grid-rows-2">
+          {/* 1 */}
           <GridItem
             area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
             icon={<Box className="h-4 w-4 text-foreground" />}
-            title="Do things the right way"
-            description="Running out of copy so I'll write anything."
+            title="Akses materi eksklusif seputar bisnis"
+            description="Materi yang tidak dibagikan ke publik."
           />
+          {/* 2 */}
           <GridItem
             area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
-            icon={<Settings className="h-4 w-4 text-foreground" />}
-            title="The best AI code editor ever."
-            description="Yes, it's true. I'm not even kidding. Ask my mom if you don't believe me."
+            icon={<Sparkles className="h-4 w-4 text-foreground" />}
+            title="Berbagi Pengetahuan"
+            description="Anggota dapat bertukar informasi tentang strategi bisnis, tren pasar, atau teknologi terbaru."
           />
+          {/* 3 */}
           <GridItem
             area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]"
-            icon={<Lock className="h-4 w-4 text-foreground" />}
-            title="You should buy Aceternity UI Pro"
-            description="It's the best money you'll ever spend"
+            icon={<Settings className="h-4 w-4 text-foreground" />}
+            title="Kolaborasi Bisnis"
+            description="Peluang untuk bekerja sama dengan anggota lain dalam proyek atau kemitraan."
           />
+          {/* 4 */}
           <GridItem
             area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
-            icon={<Sparkles className="h-4 w-4 text-foreground" />}
-            title="This card is also built by Cursor"
-            description="I'm not even kidding. Ask my mom if you don't believe me."
+            icon={<Lock className="h-4 w-4 text-foreground" />}
+            title="Jaringan Bisnis yang Luas"
+            description="Pelanggan dapat terhubung dengan pengusaha lain dari berbagai industri, memperluas koneksi profesional."
           />
+          {/* 5 */}
           <GridItem
             area="md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]"
             icon={<Search className="h-4 w-4 text-foreground" />}
-            title="Coming soon on Aceternity UI"
-            description="I'm writing the code as I record this, no shit."
+            title="Template & tools bisnis siap pakai"
+            description="Contoh: pitch deck, business plan, SOP."
           />
         </ul>
       </div>
