@@ -8,7 +8,7 @@ const GallerySection = () => {
       href: "https://ibb.co.com/3Y5thZdv",
       src: "https://i.ibb.co.com/jZ974Xfz/download-40.png",
       alt: "download-40",
-      caption: "Mulai dengan Tujuan Jelas",
+      caption: "Mulai Dengan Langkah Jelas",
     },
     {
       href: "https://ibb.co/C3xy9W4b",
