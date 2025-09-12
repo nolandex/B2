@@ -8,13 +8,13 @@ const GallerySection = () => {
       href: "https://ibb.co.com/3Y5thZdv",
       src: "https://i.ibb.co.com/jZ974Xfz/download-40.png",
       alt: "download-40",
-      caption: "Orang Yang Mau Melompat Untuk Merubah Hidupnya",
+      caption: "Mulai dengan Tujuan Jelas",
     },
     {
       href: "https://ibb.co/C3xy9W4b",
       src: "https://i.ibb.co/cSz98xR6/download-43.png",
       alt: "download-43",
-      caption: "Dan Yang Mau Berdiam Diri.",
+      caption: "Kebingungan Tanpa Arah",
     },
   ];
 
@@ -42,13 +42,15 @@ const GallerySection = () => {
             >
               <a href={item.href} target="_blank" rel="noopener noreferrer">
                 <div className="relative w-full h-full rounded-xl overflow-hidden">
-                  {/* Image with dim overlay */}
+                  {/* Image */}
                   <img
                     src={item.src}
                     alt={item.alt}
                     className="w-full h-full object-cover rounded-xl"
                   />
-                  <div className="absolute inset-0 bg-black/40"></div>
+
+                  {/* Gradient overlay at bottom for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
 
                   {/* Overlay Text */}
                   <div className="absolute bottom-6 left-0 right-0 px-4 md:px-6">
