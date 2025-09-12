@@ -1,4 +1,4 @@
-"use client";
+        "use client";
 
 import { motion } from "motion/react";
 import { Plus, Minus } from "lucide-react";
@@ -9,31 +9,39 @@ const FAQSection = () => {
 
   const faqs = [
     {
-      question: "What is included in the Professional plan?",
-      answer: "The Professional plan includes unlimited projects, 100GB storage, priority support, SSL certificate, custom domain, and advanced analytics."
+      question: "Apa yang saya dapatkan di Kelas Bisnis?",
+      answer:
+        "Di Kelas Bisnis, Anda akan mendapatkan panduan langkah demi langkah untuk membangun dan mengembangkan bisnis online. Mulai dari strategi pemasaran, branding, hingga praktek langsung membuat sistem bisnis digital."
     },
     {
-      question: "Can I cancel my subscription anytime?",
-      answer: "Yes, you can cancel your subscription at any time. Your access will continue until the end of your current billing period."
+      question: "Apa itu Komunitas Bisnis Privat?",
+      answer:
+        "Komunitas Bisnis Privat adalah ruang eksklusif untuk para anggota yang serius membangun bisnis. Anda bisa berdiskusi, bertanya, dan networking langsung dengan mentor maupun sesama pebisnis."
     },
     {
-      question: "Is there a free trial available?",
-      answer: "We offer a 14-day free trial for all new users. No credit card required to get started."
+      question: "Apakah ada biaya pendaftaran?",
+      answer:
+        "Ya, semua kelas dan komunitas bersifat berbayar. Kami tidak menyediakan kelas gratis. Anda bisa memilih paket sesuai kebutuhan untuk mendapatkan akses penuh ke materi dan pendampingan."
     },
     {
-      question: "Do you offer customer support?",
-      answer: "Yes, we provide 24/7 customer support via email and live chat. Priority support is included with the Professional plan."
+      question: "Bagaimana cara saya bergabung?",
+      answer:
+        "Anda cukup mendaftar melalui halaman pendaftaran kami. Setelah itu, Anda akan langsung mendapat akses ke materi kelas dan undangan bergabung ke komunitas bisnis privat."
     }
   ];
 
   return (
     <section className="mb-20">
+      {/* Judul */}
       <div className="flex items-center w-full gap-4 mb-8">
         <div className="flex-1 h-[3px] bg-gradient-to-r from-transparent via-primary/30 to-primary"></div>
-        <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold !leading-snug whitespace-nowrap px-6">FAQ</h2>
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold !leading-snug whitespace-nowrap px-6">
+          FAQ
+        </h2>
         <div className="flex-1 h-[3px] bg-gradient-to-r from-primary to-primary/30 via-transparent"></div>
       </div>
 
+      {/* List FAQ */}
       <div className="max-w-3xl mx-auto px-4 mt-6">
         <div className="space-y-4">
           {faqs.map((faq, index) => (
@@ -48,7 +56,9 @@ const FAQSection = () => {
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-muted/30 transition-colors"
               >
-                <span className="font-medium text-foreground">{faq.question}</span>
+                <span className="font-medium text-foreground">
+                  {faq.question}
+                </span>
                 {openIndex === index ? (
                   <Minus className="h-5 w-5 text-primary flex-shrink-0" />
                 ) : (
