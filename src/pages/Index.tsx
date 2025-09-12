@@ -28,7 +28,7 @@ const Index = () => {
         <div className="h-[1px] w-full bg-gradient-to-r from-primary to-transparent"></div>
         
         <div className="p-6 text-center">
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold !leading-snug">Amazing Features</h2>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold !leading-snug">Apa Yang Kamu Edit</h2>
         </div>
         
         <div className="max-w-7xl mx-auto mt-6 px-4">
