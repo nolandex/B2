@@ -16,7 +16,7 @@ const Index = () => {
       </section>
 
       {/* Divider */}
-      <div className='mx-auto mb-8 h-[1px] w-full max-w-2xl bg-gradient-to-r from-transparent via-primary to-transparent'></div>
+      <div className="mx-auto mb-4 h-[1px] w-full max-w-2xl bg-gradient-to-r from-transparent via-primary to-transparent"></div>
 
       {/* Features Section */}
       <section className="mb-20">
