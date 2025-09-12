@@ -4,12 +4,23 @@ import { motion } from "motion/react";
 
 const GallerySection = () => {
   const images = [
-    "https://i.ibb.co.com/NgGjX7W5/download-35.png",
-    "https://i.ibb.co.com/fzbg0rsB/download-32.png",
+    {
+      href: "https://ibb.co/rKrNQqDS",
+      src: "https://i.ibb.co/Q7wtJhyR/download-42.png",
+      alt: "download-42",
+      caption: "Bisnis dengan Jalan yang tepat",
+    },
+    {
+      href: "https://ibb.co/C3xy9W4b",
+      src: "https://i.ibb.co/cSz98xR6/download-43.png",
+      alt: "download-43",
+      caption: "Bisnis tanpa arah",
+    },
   ];
 
   return (
-    <section className="mt-6 mb-10"> {/* jarak atas kecil */}
+    <section className="mt-6 mb-10">
+      {/* Title with gradient lines */}
       <div className="flex items-center w-full gap-4 mb-6">
         <div className="flex-1 h-[3px] bg-gradient-to-r from-transparent via-primary/30 to-primary"></div>
         <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold !leading-snug whitespace-nowrap px-6">
@@ -17,22 +28,29 @@ const GallerySection = () => {
         </h2>
         <div className="flex-1 h-[3px] bg-gradient-to-r from-primary to-primary/30 via-transparent"></div>
       </div>
-      
+
+      {/* Gallery Grid */}
       <div className="max-w-7xl mx-auto px-4 mt-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {images.map((src, index) => (
+          {images.map((item, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="aspect-square rounded-xl overflow-hidden bg-card border border-border/50 hover:border-border/100 transition-colors"
+              className="relative aspect-square rounded-xl overflow-hidden bg-card border border-border/50 hover:border-border/100 transition-colors"
             >
-              <img
-                src={src}
-                alt={`Gallery Image ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
+              <a href={item.href} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="w-full h-full object-cover"
+                />
+              </a>
+              {/* Caption */}
+              <div className="absolute -bottom-6 left-2 bg-black/70 text-white text-sm md:text-base px-3 py-1 rounded-lg shadow-md">
+                {item.caption}
+              </div>
             </motion.div>
           ))}
         </div>
