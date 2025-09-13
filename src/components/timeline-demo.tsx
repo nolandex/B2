@@ -1,77 +1,82 @@
-"use client";
-
-import { Timeline } from "@/components/ui/timeline";
 import React from "react";
-
-interface TimelineEntry {
-  title: string;
-  content: React.ReactNode;
-}
+import { Timeline } from "@/components/ui/timeline";
 
 export default function TimelineDemo() {
-  const data: TimelineEntry[] = [
+  const data = [
     {
-      title: "Modul Inti Web App Kelas Bisnis",
+      title: "2024",
       content: (
-        <div className="mt-0 mb-2">
-          <ul className="list-disc pl-4 text-xs md:text-sm text-foreground">
-            <li>Dasar-dasar bisnis & mindset pengusaha</li>
-            <li>Riset pasar & strategi</li>
-            <li>Perencanaan bisnis & keuangan</li>
-            <li>Marketing & branding</li>
-            <li>Operasional & manajemen</li>
-            <li>Growth & scaling up</li>
-          </ul>
+        <div>
+          <p className="mb-8 text-xs font-normal text-foreground md:text-sm">
+            Built and launched Aceternity UI and Aceternity UI Pro from scratch
+          </p>
+          <img
+            src="https://assets.aceternity.com/templates/startup-1.webp"
+            alt="startup template"
+            width={800}
+            height={400}
+            className="w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-64 lg:h-80"
+          />
         </div>
       ),
     },
     {
-      title: "Course Niche Bisnis",
+      title: "Early 2023",
       content: (
-        <div className="mt-0 mb-2">
-          <p className="text-xs md:text-sm text-foreground mb-2">
-            Berbagai kategori course bisnis niche yang dapat difilter sesuai kebutuhan:
+        <div>
+          <p className="mb-8 text-xs font-normal text-foreground md:text-sm">
+            I usually run out of copy, but when I see content this big, I try to
+            integrate lorem ipsum.
           </p>
-          <ul className="list-disc pl-4 text-xs md:text-sm text-foreground mb-2">
-            <li>Tidak memerlukan expert untuk menjalankan (online course terbatas)</li>
-            <li>Bukan produk/jasa komoditas</li>
-            <li>Semua berasal dari pebisnis nyata</li>
-          </ul>
+          <p className="mb-8 text-xs font-normal text-foreground md:text-sm">
+            Lorem ipsum is for people who are too lazy to write copy. But we are
+            not. Here are some more example of beautiful designs I built.
+          </p>
+          <img
+            src="https://assets.aceternity.com/pro/hero-sections.png"
+            alt="hero template"
+            width={800}
+            height={400}
+            className="w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-64 lg:h-80"
+          />
         </div>
       ),
     },
     {
-      title: "Klik ‘Daftar Sekarang’ dan Selesaikan Pembayaran",
+      title: "Changelog",
       content: (
-        <div className="mt-0 mb-2">
-          <p className="text-xs font-normal text-foreground md:text-sm">
-            Setelah melakukan pembayaran, Anda akan diarahkan ke Whatsapp atau Email Admin untuk mendapatkan akses ke Grup Privat Web App Kelas Bisnis.
-          </p>
+        <div>
+          <div className="mb-8">
+            <div className="flex items-center gap-2 text-xs text-muted-foreground md:text-sm">
+              ✅ Card grid component
+            </div>
+            <div className="flex items-center gap-2 text-xs text-muted-foreground md:text-sm">
+              ✅ Startup template Aceternity
+            </div>
+            <div className="flex items-center gap-2 text-xs text-muted-foreground md:text-sm">
+              ✅ Random file upload lol
+            </div>
+            <div className="flex items-center gap-2 text-xs text-muted-foreground md:text-sm">
+              ✅ Himesh Reshammiya Music CD
+            </div>
+            <div className="flex items-center gap-2 text-xs text-muted-foreground md:text-sm">
+              ✅ Salman Bhai Fan Club registrations open
+            </div>
+          </div>
+          <img
+            src="https://assets.aceternity.com/pro/bento-grids.png"
+            alt="bento template"
+            width={800}
+            height={400}
+            className="w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-64 lg:h-80"
+          />
         </div>
       ),
     },
   ];
-
   return (
-    <section className="relative w-full overflow-clip m-0 p-0 flex flex-col items-center bg-background text-foreground">
-      {/* Timeline */}
-      <div className="w-full bg-background">
-        <Timeline data={data} className="!mt-0 !mb-0 !pt-0 !pb-0" />
-      </div>
-
-      {/* CTA Button */}
-      <div className="mt-6 mb-4 bg-background w-full flex justify-center">
-        <button
-          className="px-14 py-2 rounded-md font-medium text-base
-                     bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))]
-                     shadow-[0_4px_14px_0_hsl(var(--primary)/0.4)]
-                     hover:shadow-[0_6px_20px_hsl(var(--primary)/0.3)]
-                     hover:bg-[hsl(var(--primary)/0.9)]
-                     transition duration-200 ease-linear"
-        >
-          Daftar Sekarang
-        </button>
-      </div>
-    </section>
+    <div className="relative w-full overflow-clip">
+      <Timeline data={data} />
+    </div>
   );
 }
