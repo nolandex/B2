@@ -6,7 +6,7 @@ import React, { useEffect, useRef, useState } from "react";
 interface TimelineEntry {
   title: string;
   content: React.ReactNode;
-  image?: string; // ✅ Add optional image property
+  image?: string; // ✅ image field
 }
 
 // ✅ Timeline Component
@@ -68,16 +68,19 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           </div>
         ))}
 
-        {/* Timeline Line (start from first dot, no line above it) */}
+        {/* Timeline Line (start from first dot, not above it) */}
         <div
-          style={{ height: height + "px" }}
-          className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px]     
-            bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent via-neutral-700 to-transparent    
-            [mask-image:linear-gradient(to_bottom,black_5%,black_90%,transparent_100%)]"
+          style={{
+            height: height + "px",
+            top: "20px", // ⬅️ offset so line starts below circle center
+          }}
+          className="absolute md:left-8 left-8 overflow-hidden w-[2px]     
+            bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] via-neutral-700 to-transparent    
+            [mask-image:linear-gradient(to_bottom,black_0%,black_90%,transparent_100%)]"
         >
           <motion.div
             style={{ height: heightTransform, opacity: opacityTransform }}
-            className="absolute inset-x-0 top-0 w-[2px] bg-gradient-to-t from-purple-500 via-blue-500 to-transparent rounded-full"
+            className="absolute inset-x-0 top-0 w-[2px] bg-gradient-to-b from-purple-500 via-blue-500 to-transparent rounded-full"
           />
         </div>
       </div>
