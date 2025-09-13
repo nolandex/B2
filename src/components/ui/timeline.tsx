@@ -6,9 +6,10 @@ import React, { useEffect, useRef, useState } from "react";
 interface TimelineEntry {
   title: string;
   content: React.ReactNode;
+  image?: string; // ✅ Add optional image property
 }
 
-// ✅ Komponen Timeline
+// ✅ Timeline Component
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -40,7 +41,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             key={`timeline-item-${index}`}
             className="flex justify-start pt-10 md:pt-32 md:gap-10"
           >
-            {/* Titik dan Judul */}
+            {/* Dot + Title */}
             <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-[hsl(var(--background))] flex items-center justify-center">
                 <div className="h-4 w-4 rounded-full bg-neutral-700 border border-neutral-600 p-2" />
@@ -50,22 +51,29 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               </h3>
             </div>
 
-            {/* Konten */}
+            {/* Content + Image */}
             <div className="relative pl-20 pr-4 md:pl-4 w-full">
               <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-400">
                 {item.title}
               </h3>
               {item.content}
+              {item.image && (
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full rounded-lg object-cover md:h-64 lg:h-80 mt-3"
+                />
+              )}
             </div>
           </div>
         ))}
 
-        {/* Garis Timeline */}
+        {/* Timeline Line (start from first dot, no line above it) */}
         <div
           style={{ height: height + "px" }}
           className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px]     
             bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent via-neutral-700 to-transparent    
-            [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
+            [mask-image:linear-gradient(to_bottom,black_5%,black_90%,transparent_100%)]"
         >
           <motion.div
             style={{ height: heightTransform, opacity: opacityTransform }}
@@ -77,30 +85,22 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   );
 };
 
-// ✅ Komponen Utama
+// ✅ Main Component
 export default function TimelineDemo() {
   const data: TimelineEntry[] = [
     {
       title: "2024",
       content: (
-        <div className="mt-0 mb-2">
-          <p className="text-xs font-normal text-[hsl(var(--foreground))] md:text-sm">
-            Built and launched Aceternity UI and Aceternity UI Pro from scratch
-          </p>
-          <img
-            src="https://assets.aceternity.com/templates/startup-1.webp"
-            alt="startup template"
-            width={800}
-            height={400}
-            className="w-full rounded-lg object-cover md:h-64 lg:h-80 mt-2"
-          />
-        </div>
+        <p className="text-xs font-normal text-[hsl(var(--foreground))] md:text-sm">
+          Built and launched Aceternity UI and Aceternity UI Pro from scratch
+        </p>
       ),
+      image: "https://assets.aceternity.com/templates/startup-1.webp",
     },
     {
       title: "Early 2023",
       content: (
-        <div className="mt-0 mb-2">
+        <>
           <p className="text-xs font-normal text-[hsl(var(--foreground))] md:text-sm mb-1">
             I usually run out of copy, but when I see content this big, I try to
             integrate lorem ipsum.
@@ -109,46 +109,32 @@ export default function TimelineDemo() {
             Lorem ipsum is for people who are too lazy to write copy. But we are
             not. Here are some more example of beautiful designs I built.
           </p>
-          <img
-            src="https://assets.aceternity.com/pro/hero-sections.png"
-            alt="hero template"
-            width={800}
-            height={400}
-            className="w-full rounded-lg object-cover md:h-64 lg:h-80 mt-1"
-          />
-        </div>
+        </>
       ),
+      image: "https://assets.aceternity.com/pro/hero-sections.png",
     },
     {
       title: "Changelog",
       content: (
-        <div className="mt-0 mb-2">
-          <div className="mb-2">
-            <div className="flex items-center gap-2 text-xs text-[hsl(var(--muted-foreground))] md:text-sm">
-              ✅ Card grid component
-            </div>
-            <div className="flex items-center gap-2 text-xs text-[hsl(var(--muted-foreground))] md:text-sm">
-              ✅ Startup template Aceternity
-            </div>
-            <div className="flex items-center gap-2 text-xs text-[hsl(var(--muted-foreground))] md:text-sm">
-              ✅ Random file upload lol
-            </div>
-            <div className="flex items-center gap-2 text-xs text-[hsl(var(--muted-foreground))] md:text-sm">
-              ✅ Himesh Reshammiya Music CD
-            </div>
-            <div className="flex items-center gap-2 text-xs text-[hsl(var(--muted-foreground))] md:text-sm">
-              ✅ Salman Bhai Fan Club registrations open
-            </div>
+        <div className="mb-2">
+          <div className="flex items-center gap-2 text-xs text-[hsl(var(--muted-foreground))] md:text-sm">
+            ✅ Card grid component
           </div>
-          <img
-            src="https://assets.aceternity.com/pro/bento-grids.png"
-            alt="bento template"
-            width={800}
-            height={400}
-            className="w-full rounded-lg object-cover md:h-64 lg:h-80 mt-1"
-          />
+          <div className="flex items-center gap-2 text-xs text-[hsl(var(--muted-foreground))] md:text-sm">
+            ✅ Startup template Aceternity
+          </div>
+          <div className="flex items-center gap-2 text-xs text-[hsl(var(--muted-foreground))] md:text-sm">
+            ✅ Random file upload lol
+          </div>
+          <div className="flex items-center gap-2 text-xs text-[hsl(var(--muted-foreground))] md:text-sm">
+            ✅ Himesh Reshammiya Music CD
+          </div>
+          <div className="flex items-center gap-2 text-xs text-[hsl(var(--muted-foreground))] md:text-sm">
+            ✅ Salman Bhai Fan Club registrations open
+          </div>
         </div>
       ),
+      image: "https://assets.aceternity.com/pro/bento-grids.png",
     },
   ];
 
