@@ -1,20 +1,14 @@
-import Midtrans from "midtrans-client";
+import midtransClient from "midtrans-client";
 
-export const config = {
-  runtime: "edge",
-};
-
-export default async function handler(req) {
+export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return new Response(JSON.stringify({ error: "Method not allowed" }), {
-      status: 405,
-    });
+    return res.status(405).json({ error: "Method not allowed" });
   }
 
   try {
-    const body = await req.json();
+    const { id, price, quantity, productName, customerDetails } = req.body;
 
-    const snap = new Midtrans.Snap({
+    const snap = new midtransClient.Snap({
       isProduction: false,
       serverKey: process.env.MIDTRANS_SERVER_KEY,
       clientKey: process.env.VITE_MIDTRANS_CLIENT_KEY,
@@ -22,42 +16,29 @@ export default async function handler(req) {
 
     const parameter = {
       transaction_details: {
-        order_id: body.id,
-        gross_amount: body.price * body.quantity,
+        order_id: id,
+        gross_amount: price * quantity,
       },
       item_details: [
         {
-          id: body.id,
-          price: body.price,
-          quantity: body.quantity,
-          name: body.productName,
+          id,
+          price,
+          quantity,
+          name: productName,
         },
       ],
-      customer_details: body.customerDetails,
-      credit_card: {
-        secure: true,
-      },
+      customer_details: customerDetails,
+      credit_card: { secure: true },
     };
 
-    const token = await snap.createTransactionToken(parameter);
+    const transaction = await snap.createTransaction(parameter);
 
-    return new Response(
-      JSON.stringify({
-        token,
-        order_id: body.id,
-      }),
-      {
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    res.status(200).json({
+      token: transaction.token,
+      redirect_url: transaction.redirect_url,
+    });
   } catch (error) {
     console.error("Midtrans error:", error);
-    return new Response(
-      JSON.stringify({
-        error: "Internal Server Error",
-        details: error.message,
-      }),
-      { status: 500 }
-    );
+    res.status(500).json({ error: error.message });
   }
 }
