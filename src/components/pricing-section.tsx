@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { CheckIcon } from "lucide-react";
+import { useEffect } from "react";
 
 const Pricing = () => {
   const plan = {
@@ -9,12 +10,56 @@ const Pricing = () => {
     price: "Rp300.000",
     desc: "Bonus Website Landing Page / Company Profile Dengan Domain & Hosting",
     buttonText: "Daftar Sekarang",
-    features: [
-      "WEB-APP",
-      "Grup Eksklusif ",
-      "Support Selamanya",
-      "-",
-    ],
+    features: ["WEB-APP", "Grup Eksklusif ", "Support Selamanya", "-"],
+  };
+
+  // 🔹 Load Midtrans Snap script
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://app.sandbox.midtrans.com/snap/snap.js";
+    script.setAttribute(
+      "data-client-key",
+      import.meta.env.VITE_MIDTRANS_CLIENT_KEY
+    );
+    document.body.appendChild(script);
+  }, []);
+
+  // 🔹 Fungsi untuk bayar
+  const handlePay = async () => {
+    try {
+      const response = await fetch("/api/create-transaction", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          id: "ORDER-" + Date.now(),
+          productName: "Akses Selamanya",
+          price: 300000,
+          quantity: 1,
+          customerDetails: {
+            firstName: "Budi",
+            email: "budi@example.com",
+            phone: "081234567890",
+          },
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data?.token) {
+        window.snap.pay(data.token, {
+          onSuccess: (result) => console.log("Success:", result),
+          onPending: (result) => console.log("Pending:", result),
+          onError: (result) => console.log("Error:", result),
+          onClose: () => console.log("Popup closed without payment"),
+        });
+      } else {
+        alert("Gagal membuat transaksi.");
+        console.error("No token:", data);
+      }
+    } catch (error) {
+      console.error("Payment error:", error);
+      alert("Terjadi kesalahan saat memproses pembayaran.");
+    }
   };
 
   return (
@@ -46,7 +91,10 @@ const Pricing = () => {
 
           {/* Button */}
           <div className="flex flex-col items-start w-full px-6 pb-6">
-            <button className="shadow-[0_4px_14px_0_rgb(0,118,255,39%)] hover:shadow-[0_6px_20px_rgba(0,118,255,23%)] hover:bg-[rgba(0,118,255,0.9)] px-8 py-2 bg-[#0070f3] rounded-md text-white font-light transition duration-200 ease-linear w-full text-center">
+            <button
+              onClick={handlePay}
+              className="shadow-[0_4px_14px_0_rgb(0,118,255,39%)] hover:shadow-[0_6px_20px_rgba(0,118,255,23%)] hover:bg-[rgba(0,118,255,0.9)] px-8 py-2 bg-[#0070f3] rounded-md text-white font-light transition duration-200 ease-linear w-full text-center"
+            >
               {plan.buttonText}
             </button>
           </div>
